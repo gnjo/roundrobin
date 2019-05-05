@@ -9,8 +9,8 @@ if gist truncked 1024*10KB = 10MB or 300files.
 10000/50 = 200 images and files.
 simply calc 100images rotation.
 
-index file the one. data scheme. hash,raw_url
-[['xxxyyyzzzz','https://www.eee.eeeeee/raw/xxxxxyyyzzz.png']]
+index file the one. data scheme. hash,raw_url,timestamp
+[['xxxyyyzzzz','https://www.eee.eeeeee/raw/xxxxxyyyzzz.png','123554444']]
 
 index file rotation per 100files
 if 13files drop, then old gist and create new gist.
