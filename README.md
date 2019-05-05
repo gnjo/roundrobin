@@ -14,7 +14,7 @@ index file the one. data scheme. hash,raw_url
 
 index file rotation per 100files
 if 13files drop, then old gist and create new gist.
-or one action, one gist is simple. but overlimit the 1MB.
+or one action, one gist is simple. but overlimit the 10MB.
 
 data and translate.
 let raw_url='...'
