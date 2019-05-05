@@ -34,7 +34,7 @@ indexurl=''
 nowgistid=''
 toHash
 toUrl
-is(hash) //true or false
+has(hash) //true or false
 get(hash).then() //because fetch the gist
 set(base64).then() //return hash
 ;
