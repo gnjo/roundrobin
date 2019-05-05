@@ -26,6 +26,11 @@ localStorage save
 let hash='....'
 let flg=localStorage.keys.filter(d=>d.hash)
 if(!flg) localStorage.setItem(hash,base64)
+
+ share the localStorage
+ prefix = 'roundrobin.'
+ hash ='44agbie7'//ex
+ //key=> roundrobin.44agbie7
 ```
 
 # draft method worker is best
