@@ -27,3 +27,22 @@ let hash='....'
 let flg=localStorage.keys.filter(d=>d.hash)
 if(!flg) localStorage.setItem(hash,base64)
 ```
+
+# draft method worker is best
+```
+indexurl=''
+nowgistid=''
+toHash
+toUrl
+is(hash) //true or false
+get(hash).then() //because fetch the gist
+set(base64).then() //return hash
+;
+createGist
+updateGist
+saveGist
+saveLocal
+hasLocal
+hasGist
+hasIndex
+```
