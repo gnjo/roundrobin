@@ -1,4 +1,5 @@
 /*history
+togistr ///r///
 v1 togist
 v2 togistsearch
 v3 bugfix desc
@@ -53,8 +54,35 @@ v4.1 optimize bugfix
  gists.searchid=function(url,o){return gists.f(url,o) }
  gists.search=gists.searchid;
  
- root.togistdebug=false;
- root.togist=(async (content,gistid,filename,desc)=>{
+ 
+ //dataary
+ //[ [f,s],... ]
+  /*
+togistr2([['filea','this is a'],['fileb','this is b'] ],null,'testmultifile')  
+  */
+ root.togistr2=(async (ary,gistid,desc)=>{
+   if(ary.length===0)return console.warn('ary empty')
+  let data={"files": { } }
+  if(desc) data.description=desc; //bug fix desc
+  data.public=false
+  ;
+  ary.map(d=>{
+    let fname=d[0],content=d[1]
+    data.files[fname] = {"content": content}
+  })
+  ;
+  var ret =(gistid)?await gists.update(gistid,data) :await gists.create(data)
+  ;
+  if(root.togistdebug){
+   console.log('gistid',ret.id)
+   console.log('gist url',ret.html_url)
+  }
+  return ret;
+   
+ })
+  
+ //root.togistdebug=false;
+ root.togistr=(async (content,gistid,filename,desc)=>{
 
   let fname= filename||'anonymous'
   ,data={"files": { } }
@@ -71,7 +99,7 @@ v4.1 optimize bugfix
   }
   return ret;
  });
- root.togistsearch=(async (gistid,file)=>{
+ root.togistrsearch=(async (gistid,file)=>{
   //search id
   let url ="https://api.github.com/gists/" + gistid
   ,o={method:'GET',mode:'cors',headers:gists.headers}
@@ -81,7 +109,7 @@ v4.1 optimize bugfix
   if(!file) return ret;
   return ret.files[file].raw_url 
  })
- root.togistpage=(async (num)=>{
+ root.togistrpage=(async (num)=>{
   let _num=num||'1'
   ,user='roundrobin2019'
   ,url =`https://api.github.com/users/${user}/gists?page=${_num}`
