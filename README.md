@@ -60,4 +60,14 @@ rr.set(base64).then(hash=>rr.get(hash)) //return hash, 'roundrobin.44agbie7'
 rr.raw(hash).then(raw_url=>...) //return raw_url
 ```
 
+# target volume
+```
+20,000 images
+1gist 100images
+200 gist
+
+index.json size 20000image list =7MB
+
+```
+
 
