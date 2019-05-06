@@ -51,3 +51,13 @@ hasLocal
 hasGist
 hasIndex
 ```
+
+# simply api
+```
+let rr=roundrobin('') //indexgist,null is localStorage
+rr.get(hash).then(src=>img.src=src) //return url
+rr.set(base64).then(hash=>rr.get(hash)) //return hash, 'roundrobin.44agbie7'
+rr.raw(hash).then(raw_url=>...) //return raw_url
+```
+
+
